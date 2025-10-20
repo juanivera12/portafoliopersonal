@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portafolio - Una sola página</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8A2BE2",
+                        "primary-light": "#A855F7",
+                        "primary-dark": "#6B21A8",
+                        "secondary": "#00FFFF",
+                        "accent-magenta": "#FF00FF",
+                        "accent-cyan": "#00FFFF",
+                        "accent-yellow": "#FFFF00",
+                        "accent-pink": "#FF0080",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#1a0b2e",
+                        "background-darker": "#16213e",
+                        "background-darkest": "#0f3460",
+                        "text-light": "#212529",
+                        "text-dark": "#f8f9fa",
+                        "text-purple": "#E0E7FF",
+                        "heading-light": "#495057",
+                        "heading-dark": "#dee2e6",
+                        "heading-purple": "#C4B5FD",
+                        "border-light": "#DEE2E6",
+                        "border-dark": "#3b4754",
+                        "border-purple": "#6B21A8",
+                        "card-dark": "#2d1b69",
+                        "card-darker": "#1a0b2e"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Montserrat", "sans-serif"],
+                        "heading": ["Montserrat", "sans-serif"],
+                        "body": ["Lato", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-teal-100 via-cyan-100 to-teal-200 font-body text-text-light">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+  <!-- Light Background -->
+  <div class="fixed inset-0 z-0">
+    <!-- Base teal background with gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-teal-100 via-cyan-100 to-teal-200"></div>
+    <!-- Subtle pattern overlay -->
+    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, rgba(20, 184, 166, 0.3) 1px, transparent 0); background-size: 20px 20px;"></div>
+    
+    <!-- Subtle gradient overlay -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="light-gradient"></div>
+    </div>
+    
+    <!-- Minimal floating particles -->
+    <div class="particles-container">
+      <div class="particle particle-1"></div>
+      <div class="particle particle-2"></div>
+      <div class="particle particle-3"></div>
+    </div>
+  </div>
+
+<header class="sticky top-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="h-16 flex items-center justify-between">
+      <div class="flex items-center">
+        <h1 class="text-lg font-bold text-gray-800">¡Bienvenido a mi portafolio personal!</h1>
+        </div>
+      <nav class="flex items-center gap-8 text-sm font-medium">
+        <a href="#inicio" class="text-gray-800 hover:text-teal-600 transition-colors">Inicio</a>
+        <a href="#proyectos" class="text-gray-800 hover:text-teal-600 transition-colors">Proyectos</a>
+        <a href="#habilidades" class="text-gray-800 hover:text-teal-600 transition-colors">Habilidades</a>
+        <button onclick="openAboutModal()" class="text-gray-800 hover:text-teal-600 transition-colors font-medium">Sobre mí</button>
+      </nav>
+    </div>
+  </div>
+  <div id="mobileNav" class="md:hidden hidden border-t border-white/20 bg-white/10 backdrop-blur-md">
+    <div class="px-4 py-3 flex flex-col gap-2 text-sm">
+      <a href="#inicio" class="py-2 text-gray-800 hover:text-teal-600 transition-colors">Inicio</a>
+      <a href="#proyectos" class="py-2 text-gray-800 hover:text-teal-600 transition-colors">Proyectos</a>
+      <a href="#habilidades" class="py-2 text-gray-800 hover:text-teal-600 transition-colors">Habilidades</a>
+      <button onclick="openAboutModal()" class="py-2 text-left text-gray-800 hover:text-teal-600 transition-colors font-medium">Sobre mí</button>
+    </div>
+  </div>
+</header>
+
+<main class="flex-1 relative z-10">
+  <!-- Inicio -->
+  <section id="inicio" class="section">
+    <div class="px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-10">
+      <div class="max-w-[960px] w-full">
+        <div class="@container">
+          <div class="flex flex-col-reverse gap-10 @[864px]:flex-row @[864px]:items-center @[864px]:gap-20">
+            <div class="flex flex-col gap-6 text-center @[864px]:text-left @[864px]:w-1/2">
+              <div class="flex flex-col gap-2">
+                <h2 class="text-4xl font-bold tracking-tight font-display text-gray-900 @[480px]:text-5xl @[864px]:text-6xl" style="text-shadow: 0 0 20px rgba(94, 234, 212, 0.4), 0 0 40px rgba(94, 234, 212, 0.3), 0 0 60px rgba(94, 234, 212, 0.2);">Hola, soy Juan ignacio Vera</h2>
+                <p class="text-lg text-gray-600 @[480px]:text-xl" style="text-shadow: 0 0 15px rgba(94, 234, 212, 0.3), 0 0 30px rgba(94, 234, 212, 0.2);">Desarrollador Full Stack</p>
+                <p class="mt-2 text-base text-gray-500" style="text-shadow: 0 0 10px rgba(94, 234, 212, 0.2);">Apasionado por la tecnología y enfocado en crear soluciones innovadoras.</p>
+              </div>
+              <div class="flex flex-col gap-3 @[864px]:flex-row @[864px]:gap-4">
+                <button onclick="openAboutModal()" class="flex items-center justify-center self-center @[864px]:self-start h-12 px-5 rounded-lg bg-gradient-to-r from-teal-400 to-teal-600 text-white font-bold hover:from-teal-500 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform hover:shadow-teal-200/50 relative overflow-hidden group">
+                  <span class="relative z-10">Sobre mí</span>
+                  <div class="absolute inset-0 bg-gradient-to-r from-teal-300 to-teal-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+                <button onclick="openCVModal()" class="flex items-center justify-center self-center @[864px]:self-start h-12 px-5 rounded-lg bg-gradient-to-r from-teal-100 to-teal-200 text-teal-800 font-bold hover:from-teal-200 hover:to-teal-300 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform border border-teal-300">Ver CV</button>
+              </div>
+            </div>
+            <div class="w-full @[864px]:w-1/2 flex justify-center">
+              <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-48 w-48 border-4 shadow-lg" style='background-image: url("../assets/yo.jpg"); border-color: rgba(94, 234, 212, 0.6); box-shadow: 0 0 20px rgba(94, 234, 212, 0.4), 0 0 40px rgba(94, 234, 212, 0.2);'></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="section border-t border-gray-200">
+    <div class="px-4 sm:px-10 md:px-20 lg:px-40 flex justify-center py-10">
+      <div class="max-w-[960px] w-full">
+        <div class="flex flex-wrap justify-between gap-3 p-2">
+          <h2 class="text-gray-900 text-4xl sm:text-5xl font-black tracking-tighter">Mis Proyectos</h2>
+        </div>
+        <div class="flex gap-3 p-2 overflow-x-auto">
+          <button class="flex h-10 items-center justify-center gap-x-2 rounded-full bg-gradient-to-r from-teal-500 to-teal-700 text-white px-4 shadow-lg hover:from-teal-600 hover:to-teal-800 transition-all duration-300"><p class="text-sm font-semibold">Todos</p></button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-2">
+          <div class="flex flex-col gap-4 bg-white rounded-xl p-4 hover:shadow-xl hover:-translate-y-1 transition border border-gray-200">
+            <!-- Small preview image -->
+            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover bg-gray-100 rounded-lg cursor-pointer hover:opacity-90 transition-opacity" 
+                 style='background-image: url("../assets/login.png");'
+                 onclick="openProjectModal()">
+            </div>
+            <div class="flex flex-col gap-2">
+              <h3 class="text-gray-900 text-lg font-bold">Billetera Neexa</h3>
+              <p class="text-gray-600 text-sm">Tu billetera digital inteligente que te ayuda a gestionar tus finanzas de manera sencilla. Establece metas de ahorro, convierte monedas al instante y analiza tus gastos para tomar mejores decisiones financieras.</p>
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span class="text-xs font-medium bg-primary/20 text-primary py-1 px-2 rounded-full">React</span>
+                <span class="text-xs font-medium bg-blue-100 text-blue-800 py-1 px-2 rounded-full">TypeScript</span>
+                <span class="text-xs font-medium bg-cyan-100 text-cyan-800 py-1 px-2 rounded-full">Tailwind CSS</span>
+                <span class="text-xs font-medium bg-green-100 text-green-800 py-1 px-2 rounded-full">Python</span>
+                <span class="text-xs font-medium bg-yellow-100 text-yellow-800 py-1 px-2 rounded-full">Flask</span>
+              </div>
+            </div>
+            <button onclick="openProjectModal()" class="mt-auto w-full text-center rounded-lg bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-800 text-white font-semibold py-2.5 transition-all duration-300 hover:scale-105 transform">Ver Proyecto</button>
+          </div>
+
+          <!-- Project Card 2: Neexi Asistente Virtual -->
+          <div class="flex flex-col gap-4 bg-white rounded-xl p-4 hover:shadow-xl hover:-translate-y-1 transition border border-gray-200">
+          <!-- Small preview image -->
+          <div class="w-full bg-center bg-no-repeat aspect-video bg-cover bg-gray-100 rounded-lg cursor-pointer hover:opacity-90 transition-opacity" 
+               style='background-image: url("../assets/iniciodelbot.png");'
+               onclick="openVoiceflowModal()">
+          </div>
+            <div class="flex flex-col gap-2">
+            <h3 class="text-gray-900 text-lg font-bold">Neexi Asistente Virtual</h3>
+            <p class="text-gray-600 text-sm">Un asistente virtual inteligente que ayuda a los usuarios con consejos financieros y retos de ahorro. Diseñado para hacer que la educación financiera sea accesible y divertida a través de conversaciones naturales y desafíos personalizados.</p>
+              <div class="flex flex-wrap gap-2 mt-2">
+              <span class="text-xs font-medium bg-purple-100 text-purple-800 py-1 px-2 rounded-full">Voiceflow</span>
+              <span class="text-xs font-medium bg-green-100 text-green-800 py-1 px-2 rounded-full">IA Conversacional</span>
+              <span class="text-xs font-medium bg-blue-100 text-blue-800 py-1 px-2 rounded-full">Chatbot</span>
+              </div>
+            </div>
+          <button onclick="openVoiceflowModal()" class="mt-auto w-full text-center rounded-lg bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-800 text-white font-semibold py-2.5 transition-all duration-300 hover:scale-105 transform">Ver Proyecto</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section id="habilidades" class="section border-t border-gray-200">
+    <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex justify-center py-10">
+      <div class="max-w-[960px] w-full">
+        <div class="flex flex-wrap justify-between gap-4 p-4">
+          <div class="flex flex-col gap-3">
+            <h2 class="text-gray-900 text-3xl font-black tracking-tight">Habilidades Técnicas y Tecnologías</h2>
+            <p class="text-gray-600 text-sm">Un resumen de mis áreas de especialización.</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-gray-900 text-xl font-bold px-4 pb-3 pt-2">Lenguajes</h3>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-4 p-4">
+            <div class="flex flex-col gap-4 rounded-lg border-2 border-yellow-200 bg-white p-4 hover:shadow-lg hover:scale-105 transition hover:border-yellow-400">
+              <img src="../assets/javascript.png" alt="JavaScript" class="w-12 h-12 object-contain">
+              <div class="flex flex-col gap-1">
+                <h4 class="text-base font-bold text-gray-900">JavaScript</h4>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4 rounded-lg border-2 border-blue-200 bg-white p-4 hover:shadow-lg hover:scale-105 transition hover:border-blue-400">
+              <img src="../assets/python.png" alt="Python" class="w-12 h-12 object-contain">
+              <div class="flex flex-col gap-1">
+                <h4 class="text-base font-bold text-gray-900">Python</h4>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4 rounded-lg border-2 border-red-200 bg-white p-4 hover:shadow-lg hover:scale-105 transition hover:border-red-400">
+              <img src="../assets/java.png" alt="Java" class="w-12 h-12 object-contain">
+              <div class="flex flex-col gap-1">
+                <h4 class="text-base font-bold text-gray-900">Java</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-gray-900 text-xl font-bold px-4 pb-3 pt-2">Frontend</h3>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-4 p-4">
+            <div class="flex flex-col gap-4 rounded-lg border-2 border-cyan-200 bg-white p-4 hover:shadow-lg hover:scale-105 transition hover:border-cyan-400">
+              <img src="../assets/react.png" alt="React" class="w-12 h-12 object-contain">
+              <div class="flex flex-col gap-1">
+                <h4 class="text-base font-bold text-gray-900">React</h4>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4 rounded-lg border-2 border-blue-200 bg-white p-4 hover:shadow-lg hover:scale-105 transition hover:border-blue-400">
+              <img src="../assets/ts.png" alt="TypeScript" class="w-12 h-12 object-contain">
+              <div class="flex flex-col gap-1">
+                <h4 class="text-base font-bold text-gray-900">TypeScript</h4>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4 rounded-lg border-2 border-orange-200 bg-white p-4 hover:shadow-lg hover:scale-105 transition hover:border-orange-400">
+              <img src="../assets/html-5.png" alt="HTML5" class="w-12 h-12 object-contain">
+              <div class="flex flex-col gap-1">
+                <h4 class="text-base font-bold text-gray-900">HTML5</h4>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4 rounded-lg border-2 border-blue-200 bg-white p-4 hover:shadow-lg hover:scale-105 transition hover:border-blue-400">
+              <img src="../assets/css-3.png" alt="CSS3" class="w-12 h-12 object-contain">
+              <div class="flex flex-col gap-1">
+                <h4 class="text-base font-bold text-gray-900">CSS3</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-gray-900 text-xl font-bold px-4 pb-3 pt-2">Backend</h3>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-4 p-4">
+            <div class="flex flex-col gap-4 rounded-lg border-2 border-green-200 bg-white p-4 hover:shadow-lg hover:scale-105 transition hover:border-green-400">
+              <img src="../assets/javascript.png" alt="Node.js" class="w-12 h-12 object-contain">
+              <div class="flex flex-col gap-1">
+                <h4 class="text-base font-bold text-gray-900">Node.js</h4>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4 rounded-lg border-2 border-green-200 bg-white p-4 hover:shadow-lg hover:scale-105 transition hover:border-green-400">
+              <img src="../assets/django.png" alt="Django" class="w-12 h-12 object-contain">
+              <div class="flex flex-col gap-1">
+                <h4 class="text-base font-bold text-gray-900">Django</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-gray-900 text-xl font-bold px-4 pb-3 pt-2">Herramientas y Diseño</h3>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-4 p-4">
+            <div class="flex flex-col gap-4 rounded-lg border-2 border-purple-200 bg-white p-4 hover:shadow-lg hover:scale-105 transition hover:border-purple-400">
+              <img src="../assets/figma.png" alt="Figma" class="w-12 h-12 object-contain">
+              <div class="flex flex-col gap-1">
+                <h4 class="text-base font-bold text-gray-900">Figma</h4>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4 rounded-lg border-2 border-indigo-200 bg-white p-4 hover:shadow-lg hover:scale-105 transition hover:border-indigo-400">
+              <img src="../assets/base-de-datos.png" alt="Base de Datos" class="w-12 h-12 object-contain">
+              <div class="flex flex-col gap-1">
+                <h4 class="text-base font-bold text-gray-900">Base de Datos</h4>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4 rounded-lg border-2 border-teal-100 bg-white p-4 hover:shadow-lg hover:scale-105 transition hover:border-teal-200">
+              <img src="../assets/github (1).png" alt="GitHub" class="w-12 h-12 object-contain">
+              <div class="flex flex-col gap-1">
+                <h4 class="text-base font-bold text-gray-900">GitHub</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Encuéntrame en línea -->
+  <section class="section border-t border-gray-200">
+    <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex justify-center py-10">
+      <div class="max-w-[960px] w-full">
+        <div class="flex flex-wrap justify-between gap-4 p-4">
+          <div class="flex flex-col gap-3">
+            <h2 class="text-gray-900 text-3xl font-black tracking-tight">Encuéntrame en línea</h2>
+            <p class="text-gray-600 text-lg">Conecta conmigo a través de mis redes profesionales</p>
+              </div>
+            </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
+          <!-- GitHub -->
+          <a href="https://github.com/juanivera12" target="_blank" class="flex flex-col items-center gap-4 rounded-xl border-2 border-gray-200 bg-white p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-teal-300 group">
+            <div class="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center group-hover:bg-teal-600 transition-colors duration-300">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </div>
+            <div class="text-center">
+              <h3 class="text-lg font-bold text-gray-900 group-hover:text-teal-600 transition-colors">GitHub</h3>
+              <p class="text-sm text-gray-600 mt-1">@juanivera12</p>
+              <p class="text-xs text-gray-500 mt-2">Explora mis proyectos y contribuciones</p>
+          </div>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/juan-ignacio-vera-540825246/" target="_blank" class="flex flex-col items-center gap-4 rounded-xl border-2 border-gray-200 bg-white p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-teal-300 group">
+            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center group-hover:bg-teal-600 transition-colors duration-300">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+        </div>
+            <div class="text-center">
+              <h3 class="text-lg font-bold text-gray-900 group-hover:text-teal-600 transition-colors">LinkedIn</h3>
+              <p class="text-sm text-gray-600 mt-1">Juan Ignacio Vera</p>
+              <p class="text-xs text-gray-500 mt-2">Conecta profesionalmente conmigo</p>
+        </div>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:juanignaciovera15@gmail.com" class="flex flex-col items-center gap-4 rounded-xl border-2 border-gray-200 bg-white p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-teal-300 group">
+            <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center group-hover:bg-teal-600 transition-colors duration-300">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div class="text-center">
+              <h3 class="text-lg font-bold text-gray-900 group-hover:text-teal-600 transition-colors">Email</h3>
+              <p class="text-sm text-gray-600 mt-1">juanignaciovera15@gmail.com</p>
+              <p class="text-xs text-gray-500 mt-2">Contáctame directamente</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contacto" class="bg-gray-800 border-t border-gray-700 mt-10 relative z-10">
+  <div class="max-w-6xl mx-auto px-5 py-12">
+    <!-- Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- Personal Info -->
+      <div class="text-center md:text-left">
+        <h3 class="text-white text-xl font-bold mb-3">Juan Ignacio Vera</h3>
+        <p class="text-gray-300 text-sm mb-2">Desarrollador Full Stack</p>
+        <p class="text-gray-400 text-xs">Especializado en soluciones innovadoras y desarrollo web moderno</p>
+      </div>
+      
+      <!-- Navigation -->
+      <div class="text-center">
+        <h4 class="text-white text-lg font-semibold mb-4">Navegación</h4>
+        <div class="flex flex-col gap-2">
+          <a href="#inicio" class="text-gray-300 hover:text-teal-400 transition-colors text-sm">Inicio</a>
+          <a href="#proyectos" class="text-gray-300 hover:text-teal-400 transition-colors text-sm">Proyectos</a>
+          <a href="#habilidades" class="text-gray-300 hover:text-teal-400 transition-colors text-sm">Habilidades</a>
+          <button onclick="openAboutModal()" class="text-gray-300 hover:text-teal-400 transition-colors text-sm font-medium">Sobre mí</button>
+        </div>
+      </div>
+      
+      <!-- Contact -->
+      <div class="text-center md:text-right">
+        <h4 class="text-white text-lg font-semibold mb-4">Contacto</h4>
+        <div class="flex flex-col gap-2">
+          <a href="mailto:juanignaciovera15@gmail.com" class="text-gray-300 hover:text-teal-400 transition-colors text-sm">juanignaciovera15@gmail.com</a>
+          <a href="https://www.linkedin.com/in/juan-ignacio-vera-540825246/" target="_blank" class="text-gray-300 hover:text-teal-400 transition-colors text-sm">LinkedIn</a>
+          <a href="https://github.com/juanivera12" target="_blank" class="text-gray-300 hover:text-teal-400 transition-colors text-sm">GitHub</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-700 pt-6 text-center">
+      <p class="text-gray-400 text-sm">© 2025 Juan Ignacio Vera. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- CV Modal -->
+<div id="cvModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+    <!-- Modal Header -->
+    <div class="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center">
+      <h2 class="text-2xl font-bold text-gray-900">Curriculum Vitae</h2>
+      <button onclick="closeCVModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+    </div>
+    
+    <!-- Modal Content -->
+    <div class="p-6">
+      <!-- Información Personal -->
+      <div class="bg-gray-50 rounded-xl p-6 mb-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">person</span>
+          Información Personal
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <p class="text-sm text-gray-600">Nombre completo</p>
+            <p class="text-lg font-semibold text-gray-900">Juan Ignacio Vera</p>
+          </div>
+          <div>
+            <p class="text-sm text-gray-600">Profesión</p>
+            <p class="text-lg font-semibold text-gray-900">Desarrollador Full Stack</p>
+          </div>
+          <div>
+            <p class="text-sm text-gray-600">Ubicación</p>
+            <p class="text-lg font-semibold text-gray-900">Mendoza, Carrodilla</p>
+          </div>
+          <div>
+            <p class="text-sm text-gray-600">Email</p>
+            <p class="text-lg font-semibold text-primary">juanignaciovera15@gmail.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experiencia Profesional -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">work</span>
+          Experiencia Profesional
+        </h3>
+        <div class="space-y-6">
+            <div class="border-l-4 border-primary pl-4">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
+                <div>
+                  <h4 class="text-lg font-bold text-gray-900">Desarrollador Full Stack y Backend</h4>
+                  <p class="text-primary font-semibold">Aviv s.a./toanpe s.r.l.</p>
+                </div>
+                <span class="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">Agosto 2025 - Octubre(Finalizando) 2025</span>
+              </div>
+              <p class="text-gray-700 mt-2">Lideré el desarrollo y la implementación del Sistema de Matching y Conexión entre empresas y postulantes, incluyendo la notificación de postulantes seleccionados y el registro de las conexiones realizadas.</p>
+              <ul class="mt-2 text-sm text-gray-600 list-disc list-inside">
+                <li>Implementé funcionalidades de Módulo de Empresas, incluyendo la creación de formularios para solicitudes de perfiles, el guardado de solicitudes en base de datos y la notificación al área de RRHH</li>
+                <li>Desarrollé el Módulo Postulantes y el componente de la interfaz para Mostrar feedback de la IA a los usuarios sobre el análisis de sus CVs</li>
+                <li>Gestioné Datos y Backend Core: Participé activamente en la definición del Diseño de la Base de Datos, incluyendo la creación de tablas para usuarios, currículums, empresas y etiquetas</li>
+                <li>Implementé la Subida y Almacenamiento de Currículums (CVS en formatos PDF/DOC) y la lógica para asociar el CV al usuario correspondiente en la base de datos</li>
+                <li>Inteligencia Artificial (IA) y Recursos Humanos (RRHH): Contribuí a la integración inicial de la IA para el análisis de CVs, enfocándome en la investigación de librerías para la implementación de análisis básico y etiquetado automático de perfiles</li>
+                <li>Colaboré en el desarrollo de funcionalidades clave para el Panel de Gestión de RRHH, como la visualización y filtrado de perfiles, y la asignación manual de etiquetas para una gestión eficiente de candidatos</li>
+              </ul>
+              <p class="text-sm text-gray-500 mt-2"><strong>Tecnologías utilizadas:</strong> Flask, SQLAlchemy, Python, SQLite, HTML, CSS3, JavaScript, PostgreSQL</p>
+            </div>
+          
+          <div class="border-l-4 border-secondary pl-4">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
+              <div>
+                <h4 class="text-lg font-bold text-gray-900">Desarrollador IA</h4>
+                <p class="text-secondary font-semibold">Freelancer</p>
+              </div>
+              <span class="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">Octubre 2025 - Actualidad 2025</span>
+            </div>
+            <p class="text-gray-700 mt-2">Desarrollo y entretenimiento de un chatbot de atención al cliente, enfocado en la automatización de consultas y la mejora de la experiencia del usuario.</p>
+            <ul class="mt-2 text-sm text-gray-600 list-disc list-inside">
+              <li>Integración de IA: Implementación de la API de OpenAI (GPT) para generar respuestas contextuales y precisas a las consultas de los clientes</li>
+              <li>Backend y Entorno: Construcción del bot utilizando Python y su base de datos PostgreSQL para la gestión de la conversación y el almacenamiento de datos</li>
+              <li>Integración de Mensajería: Implementación de la API de WhatsApp Business para la comunicación directa y escalable con los clientes</li>
+            </ul>
+            <p class="text-sm text-gray-500 mt-2"><strong>Tecnologías utilizadas:</strong> Openai, WhatsApp Business, Python, PostgreSQL</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Educación -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">school</span>
+          Educación
+        </h3>
+        <div class="space-y-4">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
+            <div>
+              <h4 class="text-lg font-bold text-gray-900">Tecnicatura en programación</h4>
+              <p class="text-primary font-semibold">Universidad Tecnológica Nacional San Rafael</p>
+            </div>
+            <span class="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">En curso - Etapa final</span>
+          </div>
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
+            <div>
+              <h4 class="text-lg font-bold text-gray-900">Universidad Python</h4>
+              <p class="text-secondary font-semibold">Universidad Python (+86 hs) - Curso Completo Udemy</p>
+            </div>
+            <span class="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">Curso</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resumen Profesional -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">description</span>
+          Resumen Profesional
+        </h3>
+        <p class="text-gray-700 leading-relaxed">
+          ESTUDIANTE TECNICATURA EN PROGRAMACIÓN (UTNSRF) - ETAPA FINAL Soy un estudiante de programación en la etapa final de mi carrera con muchas ganas de aprender y de formar parte de un equipo. Me considero una persona creativa a la que le gusta colaborar con mis compañeros para resolver problemas. Busco una oportunidad para aplicar lo que sé, aportar mi entusiasmo y seguir creciendo en un ambiente que valore el trabajo en equipo.
+        </p>
+      </div>
+
+      <!-- Habilidades Técnicas -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">code</span>
+          Habilidades Técnicas
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Frontend</h4>
+            <div class="flex flex-wrap gap-1">
+              <span class="text-xs bg-cyan-100 text-cyan-800 px-2 py-1 rounded">React</span>
+              <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">TypeScript</span>
+              <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">HTML</span>
+              <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">CSS</span>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Backend</h4>
+            <div class="flex flex-wrap gap-1">
+              <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Flask</span>
+              <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Django</span>
+              <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">JavaScript</span>
+              <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Python</span>
+              <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Java</span>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Bases de Datos</h4>
+            <div class="flex flex-wrap gap-1">
+              <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded">SQLAlchemy</span>
+              <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded">SQLite</span>
+              <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Project Modal -->
+<div id="projectModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+    <!-- Modal Header -->
+    <div class="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center">
+      <h2 class="text-2xl font-bold text-gray-900">Billetera Neexa</h2>
+      <button onclick="closeProjectModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+    </div>
+    
+    <!-- Modal Content -->
+    <div class="p-6">
+      <!-- Project Description -->
+      <div class="mb-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Billetera Neexa - Aplicación Financiera Inteligente</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Billetera Neexa es una aplicación web completa que simula una billetera digital moderna con funcionalidades avanzadas de gestión financiera. Desarrollada con React + TypeScript en el frontend y Python + Flask en el backend, ofrece una experiencia completa de banca digital que incluye gestión de ahorros, análisis financiero y conversión de monedas en tiempo real.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <!-- Características Principales -->
+          <div class="bg-gray-50 rounded-lg p-4">
+            <h4 class="font-bold text-gray-900 mb-3">Características Principales</h4>
+            <ul class="text-sm text-gray-700 space-y-2">
+              <li>• Dashboard interactivo con visualización de saldo y tarjeta virtual</li>
+              <li>• Sistema de ahorros inteligente con metas personalizables y retos gamificados</li>
+              <li>• Conversor de monedas con tasas de cambio en tiempo real</li>
+              <li>• Análisis financiero con recomendaciones basadas en patrones de gasto</li>
+              <li>• Autenticación segura con JWT y encriptación de contraseñas</li>
+              <li>• Modo oscuro/claro con diseño responsivo</li>
+            </ul>
+          </div>
+          
+          <!-- Funcionalidades Destacadas -->
+          <div class="bg-gray-50 rounded-lg p-4">
+            <h4 class="font-bold text-gray-900 mb-3">Funcionalidades Destacadas</h4>
+            <ul class="text-sm text-gray-700 space-y-2">
+              <li>• Gestión de presupuestos por categorías con análisis inteligente</li>
+              <li>• Conversor de divisas integrado con tasas actualizadas</li>
+              <li>• Sistema de recomendaciones  simulada para optimización</li>
+              <li>• Transferencias y depósitos virtuales con historial completo</li>
+              <li>• Análisis de patrones de gasto y proyecciones financieras</li>
+              <li>• Interfaz intuitiva con componentes reutilizables</li>
+            </ul>
+              </div>
+            </div>
+        
+        <!-- Tecnologías -->
+        <div class="bg-blue-50 rounded-lg p-4 mb-4">
+          <h4 class="font-bold text-gray-900 mb-3">Tecnologías Utilizadas</h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <h5 class="font-semibold text-gray-800 mb-2">Frontend</h5>
+              <p class="text-gray-700">React , TypeScript, Tailwind CSS </p>
+            </div>
+            <div>
+              <h5 class="font-semibold text-gray-800 mb-2">Backend</h5>
+              <p class="text-gray-700">Python, Flask, SQLAlchemy, JWT, bcrypt</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs font-medium bg-primary/20 text-primary py-1 px-2 rounded-full">React</span>
+          <span class="text-xs font-medium bg-blue-100 text-blue-800 py-1 px-2 rounded-full">TypeScript</span>
+          <span class="text-xs font-medium bg-green-100 text-green-800 py-1 px-2 rounded-full">Python</span>
+          <span class="text-xs font-medium bg-yellow-100 text-yellow-800 py-1 px-2 rounded-full">Flask</span>
+          <span class="text-xs font-medium bg-purple-100 text-purple-800 py-1 px-2 rounded-full">SQLAlchemy</span>
+          <span class="text-xs font-medium bg-cyan-100 text-cyan-800 py-1 px-2 rounded-full">Tailwind CSS</span>
+        </div>
+      </div>
+
+      <!-- Carousel Container -->
+      <div class="relative">
+        <div id="projectCarousel" class="overflow-hidden rounded-lg">
+          <div class="flex transition-transform duration-500 ease-in-out" id="carouselTrack">
+            <!-- Slide 1: Login -->
+            <div class="w-full flex-shrink-0">
+              <div class="w-full bg-center bg-no-repeat aspect-video bg-contain bg-gray-100 rounded-lg" style='background-image: url("../assets/login.png");'></div>
+            </div>
+            <!-- Slide 2: Mi Billetera -->
+            <div class="w-full flex-shrink-0">
+              <div class="w-full bg-center bg-no-repeat aspect-video bg-contain bg-gray-100 rounded-lg" style='background-image: url("../assets/mibilletera.png");'></div>
+            </div>
+            <!-- Slide 3: Metas -->
+            <div class="w-full flex-shrink-0">
+              <div class="w-full bg-center bg-no-repeat aspect-video bg-contain bg-gray-100 rounded-lg" style='background-image: url("../assets/metas.png");'></div>
+            </div>
+            <!-- Slide 4: Retos Ahorro -->
+            <div class="w-full flex-shrink-0">
+              <div class="w-full bg-center bg-no-repeat aspect-video bg-contain bg-gray-100 rounded-lg" style='background-image: url("../assets/retosahorro.png");'></div>
+            </div>
+            <!-- Slide 5: Análisis -->
+            <div class="w-full flex-shrink-0">
+              <div class="w-full bg-center bg-no-repeat aspect-video bg-contain bg-gray-100 rounded-lg" style='background-image: url("../assets/analisis.png");'></div>
+            </div>
+            <!-- Slide 6: Conversor -->
+            <div class="w-full flex-shrink-0">
+              <div class="w-full bg-center bg-no-repeat aspect-video bg-contain bg-gray-100 rounded-lg" style='background-image: url("../assets/conversordemoneda.png");'></div>
+        </div>
+            <!-- Slide 7: Calculadora -->
+            <div class="w-full flex-shrink-0">
+              <div class="w-full bg-center bg-no-repeat aspect-video bg-contain bg-gray-100 rounded-lg" style='background-image: url("../assets/calculadora.png");'></div>
+            </div>
+            <!-- Slide 8: Modo Oscuro -->
+            <div class="w-full flex-shrink-0">
+              <div class="w-full bg-center bg-no-repeat aspect-video bg-contain bg-gray-100 rounded-lg" style='background-image: url("../assets/modooscuro.png");'></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation Arrows -->
+        <button id="modalPrevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-3 transition-all duration-300">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button id="modalNextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-3 transition-all duration-300">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+        
+        <!-- Dots Indicator -->
+        <div class="flex justify-center mt-4 space-x-2">
+          <button class="modal-carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="0"></button>
+          <button class="modal-carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="1"></button>
+          <button class="modal-carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="2"></button>
+          <button class="modal-carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="3"></button>
+          <button class="modal-carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="4"></button>
+          <button class="modal-carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="5"></button>
+          <button class="modal-carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="6"></button>
+          <button class="modal-carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="7"></button>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+<script>
+function openCVModal() {
+  document.getElementById('cvModal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCVModal() {
+  document.getElementById('cvModal').classList.add('hidden');
+  document.body.style.overflow = 'auto';
+}
+
+// Cerrar modal al hacer clic fuera del contenido
+document.getElementById('cvModal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeCVModal();
+  }
+});
+
+// Cerrar modal con tecla Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeCVModal();
+  }
+});
+
+// Project Modal functionality
+function openProjectModal() {
+  document.getElementById('projectModal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  // Reset carousel to first slide when opening
+  modalCurrentSlide = 0;
+  updateModalCarousel();
+}
+
+function closeProjectModal() {
+  document.getElementById('projectModal').classList.add('hidden');
+  document.body.style.overflow = 'auto';
+}
+
+// Modal Carousel functionality
+let modalCurrentSlide = 0;
+const modalTotalSlides = 8;
+const modalCarouselTrack = document.getElementById('carouselTrack');
+const modalPrevBtn = document.getElementById('modalPrevBtn');
+const modalNextBtn = document.getElementById('modalNextBtn');
+const modalDots = document.querySelectorAll('.modal-carousel-dot');
+
+function updateModalCarousel() {
+  const translateX = -modalCurrentSlide * 100;
+  modalCarouselTrack.style.transform = `translateX(${translateX}%)`;
+  
+  // Update dots
+  modalDots.forEach((dot, index) => {
+    if (index === modalCurrentSlide) {
+      dot.classList.remove('bg-gray-300');
+      dot.classList.add('bg-primary');
+    } else {
+      dot.classList.remove('bg-primary');
+      dot.classList.add('bg-gray-300');
+    }
+  });
+}
+
+function modalNextSlide() {
+  modalCurrentSlide = (modalCurrentSlide + 1) % modalTotalSlides;
+  updateModalCarousel();
+}
+
+function modalPrevSlide() {
+  modalCurrentSlide = (modalCurrentSlide - 1 + modalTotalSlides) % modalTotalSlides;
+  updateModalCarousel();
+}
+
+function modalGoToSlide(slideIndex) {
+  modalCurrentSlide = slideIndex;
+  updateModalCarousel();
+}
+
+// Modal Event listeners
+modalNextBtn.addEventListener('click', modalNextSlide);
+modalPrevBtn.addEventListener('click', modalPrevSlide);
+
+modalDots.forEach((dot, index) => {
+  dot.addEventListener('click', () => modalGoToSlide(index));
+});
+
+// Cerrar modal del proyecto al hacer clic fuera del contenido
+document.getElementById('projectModal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeProjectModal();
+  }
+});
+
+// Cerrar modal del proyecto con tecla Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeProjectModal();
+  }
+});
+
+// Initialize modal carousel
+updateModalCarousel();
+
+// About Modal functionality
+function openAboutModal() {
+  document.getElementById('aboutModal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAboutModal() {
+  document.getElementById('aboutModal').classList.add('hidden');
+  document.body.style.overflow = 'auto';
+}
+
+// Cerrar modal sobre mí al hacer clic fuera del contenido
+document.getElementById('aboutModal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeAboutModal();
+  }
+});
+
+// Cerrar modal sobre mí con tecla Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeAboutModal();
+  }
+});
+
+// Voiceflow Modal functionality
+function openVoiceflowModal() {
+  document.getElementById('voiceflowModal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  // Reset carousel to first slide when opening
+  voiceflowCurrentSlide = 0;
+  updateVoiceflowCarousel();
+}
+
+function closeVoiceflowModal() {
+  document.getElementById('voiceflowModal').classList.add('hidden');
+  document.body.style.overflow = 'auto';
+}
+
+// Voiceflow Carousel functionality
+let voiceflowCurrentSlide = 0;
+const voiceflowTotalSlides = 3;
+const voiceflowCarouselTrack = document.getElementById('voiceflowCarouselTrack');
+const voiceflowPrevBtn = document.getElementById('voiceflowPrevBtn');
+const voiceflowNextBtn = document.getElementById('voiceflowNextBtn');
+const voiceflowDots = document.querySelectorAll('.voiceflow-carousel-dot');
+
+function updateVoiceflowCarousel() {
+  const translateX = -voiceflowCurrentSlide * 100;
+  voiceflowCarouselTrack.style.transform = `translateX(${translateX}%)`;
+  
+  // Update dots
+  voiceflowDots.forEach((dot, index) => {
+    if (index === voiceflowCurrentSlide) {
+      dot.classList.remove('bg-gray-300');
+      dot.classList.add('bg-teal-500');
+    } else {
+      dot.classList.remove('bg-teal-500');
+      dot.classList.add('bg-gray-300');
+    }
+  });
+}
+
+function voiceflowNextSlide() {
+  voiceflowCurrentSlide = (voiceflowCurrentSlide + 1) % voiceflowTotalSlides;
+  updateVoiceflowCarousel();
+}
+
+function voiceflowPrevSlide() {
+  voiceflowCurrentSlide = (voiceflowCurrentSlide - 1 + voiceflowTotalSlides) % voiceflowTotalSlides;
+  updateVoiceflowCarousel();
+}
+
+function voiceflowGoToSlide(slideIndex) {
+  voiceflowCurrentSlide = slideIndex;
+  updateVoiceflowCarousel();
+}
+
+// Voiceflow Modal Event listeners
+voiceflowNextBtn.addEventListener('click', voiceflowNextSlide);
+voiceflowPrevBtn.addEventListener('click', voiceflowPrevSlide);
+
+voiceflowDots.forEach((dot, index) => {
+  dot.addEventListener('click', () => voiceflowGoToSlide(index));
+});
+
+// Cerrar modal de Voiceflow al hacer clic fuera del contenido
+document.getElementById('voiceflowModal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeVoiceflowModal();
+  }
+});
+
+// Cerrar modal de Voiceflow con tecla Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeVoiceflowModal();
+  }
+});
+
+// Initialize voiceflow carousel
+updateVoiceflowCarousel();
+</script>
+
+<!-- Voiceflow Project Modal -->
+<div id="voiceflowModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+    <!-- Modal Header -->
+    <div class="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center">
+      <h2 class="text-2xl font-bold text-gray-900">Neexi Asistente Virtual</h2>
+      <button onclick="closeVoiceflowModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+    </div>
+    
+    <!-- Modal Content -->
+    <div class="p-6">
+      <!-- Project Description -->
+      <div class="mb-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Sobre el Proyecto</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Neexi es un asistente virtual especializado en educación financiera que transforma conceptos complejos de ahorro y presupuesto en conversaciones amigables y desafíos divertidos. Diseñado para hacer que la gestión financiera personal sea accesible para todos.
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          El asistente guía a los usuarios a través de diferentes flujos conversacionales, desde la creación de presupuestos personalizados hasta la participación en retos de ahorro que hacen que el proceso sea entretenido y motivador.
+        </p>
+      </div>
+
+      <!-- Carousel -->
+      <div class="mb-6">
+        <div class="relative bg-gray-100 rounded-lg overflow-hidden">
+          <div id="voiceflowCarouselTrack" class="flex transition-transform duration-300 ease-in-out">
+            <!-- Slide 1: Inicio del Bot -->
+            <div class="w-full flex-shrink-0">
+              <div class="w-full h-64 bg-center bg-no-repeat bg-contain bg-gray-100" style='background-image: url("../assets/iniciodelbot.png");'></div>
+            </div>
+            <!-- Slide 2: Ejemplo de Presupuesto -->
+            <div class="w-full flex-shrink-0">
+              <div class="w-full h-64 bg-center bg-no-repeat bg-contain bg-gray-100" style='background-image: url("../assets/ejemplopresupuesto.png");'></div>
+            </div>
+            <!-- Slide 3: Ejemplo de Aprender a Ahorrar -->
+            <div class="w-full flex-shrink-0">
+              <div class="w-full h-64 bg-center bg-no-repeat bg-contain bg-gray-100" style='background-image: url("../assets/ejemplodeaprenderahorrar.png");'></div>
+            </div>
+          </div>
+          
+          <!-- Navigation Arrows -->
+          <button id="voiceflowPrevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button id="voiceflowNextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Carousel Dots -->
+        <div class="flex justify-center gap-2 mt-4">
+          <button class="voiceflow-carousel-dot w-3 h-3 rounded-full bg-teal-500 transition-all"></button>
+          <button class="voiceflow-carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
+          <button class="voiceflow-carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="bg-blue-50 rounded-lg p-4 mb-4">
+        <h4 class="font-bold text-gray-900 mb-3">Características Principales</h4>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li>• Conversaciones naturales sobre finanzas personales</li>
+          <li>• Creación de presupuestos personalizados</li>
+          <li>• Retos de ahorro semanal y diario</li>
+          <li>• Consejos financieros adaptados al usuario</li>
+          <li>• Interfaz conversacional intuitiva</li>
+          <li>• Cálculos automáticos de ahorro</li>
+        </ul>
+        </div>
+
+      <!-- Technologies -->
+      <div class="bg-green-50 rounded-lg p-4 mb-4">
+        <h4 class="font-bold text-gray-900 mb-3">Tecnologías Utilizadas</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <h5 class="font-semibold text-gray-800 mb-2">Plataforma</h5>
+            <p class="text-gray-700">Voiceflow - Diseño visual de flujos conversacionales</p>
+            </div>
+          <div>
+            <h5 class="font-semibold text-gray-800 mb-2">Funcionalidades</h5>
+            <p class="text-gray-700">IA Conversacional, Lógica de Flujo, Variables Dinámicas</p>
+            </div>
+          </div>
+        </div>
+
+      <!-- How it was made -->
+      <div class="bg-purple-50 rounded-lg p-4">
+        <h4 class="font-bold text-gray-900 mb-3">Cómo se Desarrolló</h4>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          El proyecto se desarrolló utilizando Voiceflow, una plataforma visual que permite crear asistentes conversacionales sin necesidad de programación tradicional. Se diseñaron flujos de conversación intuitivos que guían al usuario a través de diferentes opciones, desde la creación de presupuestos hasta la participación en retos de ahorro. La lógica se implementó mediante bloques visuales que manejan variables, cálculos automáticos y respuestas personalizadas, creando una experiencia fluida y educativa.
+        </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- About Modal -->
+<div id="aboutModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+    <!-- Modal Header -->
+    <div class="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center">
+      <h2 class="text-2xl font-bold text-gray-900">Sobre mí</h2>
+      <button onclick="closeAboutModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+    </div>
+    
+    <!-- Modal Content -->
+    <div class="p-6">
+      <div class="flex flex-col items-center gap-6">
+        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 border-4 shadow-lg" style='background-image: url("../assets/yo.jpg"); border-color: rgba(94, 234, 212, 0.6); box-shadow: 0 0 15px rgba(94, 234, 212, 0.4), 0 0 30px rgba(94, 234, 212, 0.2);'></div>
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Juan Ignacio Vera</h3>
+          <p class="text-lg text-gray-600 mb-4">Desarrollador Full Stack</p>
+          <div class="bg-gray-50 rounded-lg p-6 text-left">
+            <div class="space-y-4 text-gray-700 leading-relaxed">
+              <p class="text-lg font-semibold text-gray-800">¡Hola, gracias por tomarte el tiempo de visitar mi portafolio!</p>
+              
+              <p>Soy un desarrollador en constante aprendizaje, impulsado por una profunda pasión por la innovación y la creación de soluciones originales. No me conformo con seguir los caminos existentes; me entusiasma proponer ideas y buscar activamente formas creativas de programar que aún no han sido exploradas en el mercado.</p>
+              
+              <p>Mi motivación es transformar conceptos complejos en herramientas funcionales que generen un impacto positivo.</p>
+              
+              <div class="bg-white rounded-lg p-4 border-l-4 border-teal-400">
+                <h4 class="font-bold text-gray-800 mb-2">Mi Filosofía de Trabajo</h4>
+                <ul class="space-y-2 text-sm">
+                  <li><strong>Innovación y Proactividad:</strong> Disfruto identificar problemas y conceptualizar soluciones, aplicando tecnologías de vanguardia como la Inteligencia Artificial (IA) para construir productos inteligentes.</li>
+                  <li><strong>Trabajo en Equipo:</strong> Creo firmemente en la colaboración. Mi experiencia en proyectos grandes me ha enseñado el valor de comunicarme con claridad y aportar con paciencia y dedicación para alcanzar objetivos comunes.</li>
+                  <li><strong>Aprendizaje Continuo:</strong> Cada día es una oportunidad para dominar una nueva herramienta. Estoy familiarizado con un stack amplio que va desde Python, JavaScript y React hasta el manejo de bases de datos como PostgreSQL y el uso de Figma en la fase de diseño.</li>
+                </ul>
+              </div>
+              
+              <div class="bg-white rounded-lg p-4 border-l-4 border-teal-400">
+                <h4 class="font-bold text-gray-800 mb-2">Logros que me Definen</h4>
+                <p class="text-sm mb-2">He tenido la oportunidad de participar en proyectos ambiciosos que demuestran mi capacidad para llevar ideas a la realidad:</p>
+                <ul class="space-y-2 text-sm">
+                  <li><strong>Automatización de Soporte:</strong> Estoy desarrollando un bot de atención al cliente freelance, integrando la inteligencia de OpenAI con el canal directo de WhatsApp Business API para ofrecer soporte automatizado y eficiente.</li>
+                  <li><strong>Plataforma de Talento:</strong> Colaboré activamente en el desarrollo de una plataforma web que usa IA para el análisis y matching de currículums, liderando módulos clave como el Sistema de Conexión entre empresas y postulantes.</li>
+                </ul>
+              </div>
+              
+              <p class="text-center font-medium text-gray-800">En resumen, soy un desarrollador con visión, compromiso con la excelencia y una gran paciencia para enfrentar y superar cualquier desafío técnico.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</div>
+</body>
+</html>
+
