@@ -2,6 +2,14 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Import images for E-ToolMerce Builder
+import etLoginImg from '../assets/etoolmerce capturas/logineetol.png';
+import etComponentsImg from '../assets/etoolmerce capturas/componentes.png';
+import etCommunityImg from '../assets/etoolmerce capturas/comunidad.png';
+import etEditorImg from '../assets/etoolmerce capturas/editordecomponentes.png';
+import etExportImg from '../assets/etoolmerce capturas/exportar.png';
+import etInterfaceImg from '../assets/etoolmerce capturas/interfaz.png';
+
 // Import images for Billetera Neexa
 import loginImg from '../assets/login.png';
 import walletImg from '../assets/mibilletera.png';
@@ -24,7 +32,14 @@ const Projects = () => {
             details: "E-ToolMerce Builder es una plataforma No-Code diseñada para democratizar la creación de e-commerce profesionales. Permite a los usuarios arrastrar y soltar componentes como carritos, botones de pago y galerías interactivas.\n\nPrincipales desafíos resueltos:\n• Motor de renderizado dinámico para estructuras JSON complejas.\n• Sistema de redimensionamiento inteligente y auto-fit.\n• Persistencia de estado local para evitar pérdida de datos.\n• Optimización de rendimiento para manipular cientos de nodos en tiempo real.",
             tags: ["React", "Vite", "Tailwind CSS", "Zustand", "Framer Motion"],
             color: "from-blue-600 to-cyan-500",
-            images: []
+            images: [
+                etLoginImg,
+                etInterfaceImg,
+                etEditorImg,
+                etComponentsImg,
+                etExportImg,
+                etCommunityImg
+            ]
         },
         {
             title: "Billetera Neexa",
